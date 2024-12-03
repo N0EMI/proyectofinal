@@ -1,0 +1,525 @@
+/* Basic reset: Se asegura de que todos los elementos tengan el mismo punto de partida */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ======================== ESTILOS GENERALES ======================== */
+
+/* Estilos para el top banner */
+.top-banner {
+    background-color: #40aba8;
+    color: white;
+    text-align: center;
+    padding: 0.5rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 20px;
+}
+
+.top-banner a {
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* ===================== NAVEGACIÓN EN EL ENCABEZADO ===================== */
+
+/* Header navigation: barra de navegación del encabezado */
+.header-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #fff;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.header-nav .logo {
+    max-width: 15%; /* Ajuste flexible del logo */
+}
+
+.header-nav input[type="text"] {
+    padding: 0.5rem;
+    width: 55%;
+    border: 1px solid #ccc;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1rem;
+    border-radius: 5px;
+}
+
+.header-nav button {
+    padding: 0.5rem 1rem;
+    background-color: #40aba8;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1rem;
+    border-radius: 5px;
+}
+
+.header-nav button:hover {
+    background-color: #0056b3; /* Color de fondo al pasar el cursor */
+}
+
+/* Estilos para los enlaces de navegación */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    justify-content: flex-end;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: black;
+}
+
+/* ======================== BANNERS PROMOCIONALES ======================= */
+
+/* Promo banner: Estilo del banner promocional */
+.promo-banner {
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem;
+    background-color: #f9f9f9;
+}
+
+.promo-banner img {
+    max-width: 50%;
+    height: 20%;
+}
+
+/* ========================== CARROUSEL =============================== */
+
+/* Estilo del carrusel */
+.carousel {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 200%;
+}
+
+.slides img {
+    width: 100%;
+    height: auto;
+    flex-shrink: 0;
+}
+
+/* ======================== MODAL ===================================== */
+
+/* Modal: Estilos generales del modal */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro */
+    justify-content: center;
+    align-items: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 400px;
+}
+
+.close {
+    float: right;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Formulario dentro del modal */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label,
+form input {
+    margin-bottom: 8px;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+form input[type="submit"] {
+    background-color: #40aba8;
+    color: white;
+    border: none;
+    padding: 10px 10px;
+    margin-top: 8px;
+    cursor: pointer;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: medium;
+}
+
+form input[type="submit"]:hover {
+    background-color: #0056b3;
+    color: black;
+}
+
+/* ===================== ESTILOS RESPONSIVOS =========================== */
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+    .header-nav {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .header-nav .logo {
+        max-width: 50%;
+    }
+
+    .header-nav input[type="text"] {
+        width: 80%;
+    }
+
+    .nav-links {
+        justify-content: center;
+        gap: 0.5rem;
+        padding: 1rem;
+    }
+
+    .promo-banner {
+        flex-direction: column;
+    }
+
+    .promo-banner img {
+        margin-bottom: 1rem;
+    }
+
+    .carousel img {
+        height: auto;
+    }
+
+    .slides {
+        width: 100%;
+    }
+
+    form input[type="submit"] {
+        padding: 10px;
+    }
+}
+
+/* ===================== BARRA DE CATEGORÍAS =========================== */
+
+/* Barra de categorías en scroll */
+.scrolling-bar {
+    background-color: #f2f3f3;
+    border-top: 2px solid #ccc;
+    border-bottom: 2px solid #ccc;
+    padding: 5px 0;
+    overflow: hidden;
+}
+
+.category-list {
+    display: flex;
+    gap: 1rem;
+    animation: scroll 20s linear infinite;
+    white-space: nowrap;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.category-list li {
+    padding: 10px;
+}
+
+.category-list li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding: 10px 15px;
+    display: inline-block;
+    font-size: large;
+}
+
+.category-list li a:hover {
+    background-color: #40aba8;
+    color: #fff;
+}
+
+/* Animación de scroll de categorías */
+@keyframes scroll {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.category-list:hover {
+    animation-play-state: paused; /* Pausa el movimiento al pasar el ratón */
+}
+
+/* =========================== ALERTAS ============================== */
+
+/* Estilos para las alertas */
+.alert {
+    padding: 20px;
+    background-color: #4CAF50;
+    color: white;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    display: none;
+}
+
+.alert.success {
+    background-color: #4CAF50;
+}
+
+.alert.error {
+    background-color: #f44336;
+}
+
+.alert .closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.alert .closebtn:hover {
+    color: black;
+}
+
+/* Modal Volver: Estilos para el botón de volver en un modal */
+#modalVolver button {
+    margin: 5px 0;
+    display: block;
+    width: 100%;
+}
+
+/* ========================= ESTILOS DE PRODUCTOS ===================== */
+
+/* Estilos para la lista de productos */
+.productos-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    margin: 20px;
+}
+
+/* Estilos para los productos individuales */
+.producto-item {
+    border: 1px solid #ddd;
+    padding: 15px;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.producto-item img {
+    width: 200px;
+    height: 200px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.producto-item h3 {
+    margin: 10px 0;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.producto-item p {
+    font-size: 1.1em;
+    color: #333;
+}
+
+
+/* ======================== MODAL DE USUARIO ======================== */
+
+
+
+/* Estilo del modal de cantidad de producto */
+.modal-producto {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centra el modal */
+    z-index: 1000;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 20px;
+    max-width: 400px;
+    width: 90%; /* Se adapta a pantallas pequeñas */
+}
+
+/* Contenido del modal */
+.modal-producto-content {
+    text-align: center; /* Centra el contenido */
+    position: relative; /* Para posicionar el botón de cerrar */
+    font-family: 'Arial', sans-serif;
+}
+
+/* Botón de cerrar */
+.close-producto {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #888;
+}
+
+.close-producto:hover {
+    color: #000;
+}
+
+/* Título */
+.modal-producto-content h3 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+/* Campo de entrada para cantidad */
+.input-cantidad-producto {
+    width: 60px;
+    padding: 8px;
+    font-size: 16px;
+    text-align: center;
+    margin: 15px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.input-cantidad-producto:focus {
+    border-color: #007bff;
+}
+
+/* Botón estilizado */
+.button-producto {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.button-producto:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px); /* Levanta el botón */
+}
+
+    /* Botón de perfil de usuario */
+    .user-profile-btn {
+        display: inline-flex; /* Alineación para el texto e ícono */
+        align-items: center; /* Centra verticalmente */
+        gap: 8px; /* Espacio entre ícono y texto */
+        padding: 10px 20px; /* Espaciado interno */
+        font-size: 16px; /* Tamaño de texto */
+        font-family: 'Arial', sans-serif; /* Fuente limpia */
+        text-decoration: none; /* Elimina subrayado */
+        color: #fff; /* Color del texto */
+        background-color: #40aba8; /* Color de fondo */
+        border: none; /* Sin bordes */
+        border-radius: 5px; /* Bordes redondeados */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+        transition: background-color 0.3s ease, transform 0.2s ease; /* Transiciones */
+        cursor: pointer; /* Cursor de botón */
+    }
+    
+    /* Efecto al pasar el cursor */
+    .user-profile-btn:hover {
+        background-color: #0056b3; /* Color más oscuro */
+        transform: translateY(-2px); /* Levanta el botón */
+    }
+    
+    /* Ícono dentro del botón */
+    .user-profile-icon {
+        font-size: 18px; /* Tamaño del ícono */
+    }
+    /* Botón de "Añadir al carrito" */
+    .button-producto {
+        display: inline-flex; /* Alineación para el texto e ícono */
+        align-items: center; /* Centra verticalmente */
+        gap: 8px; /* Espacio entre ícono y texto */
+        padding: 10px 20px; /* Espaciado interno */
+        font-size: 16px; /* Tamaño de texto */
+        font-family: 'Arial', sans-serif; /* Fuente limpia */
+        text-decoration: none; /* Elimina subrayado */
+        color: #fff; /* Color del texto */
+        background-color: #40aba8; /* Color de fondo inicial */
+        border: none; /* Sin bordes */
+        border-radius: 5px; /* Bordes redondeados */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+        transition: background-color 0.3s ease, transform 0.2s ease; /* Transiciones */
+        cursor: pointer; /* Cursor de botón */
+    }
+    
+    /* Efecto al pasar el cursor */
+    .button-producto:hover {
+        background-color: #0056b3; /* Color más oscuro al hacer hover */
+        transform: translateY(-2px); /* Levanta el botón */
+    }
+    
+    /* Ícono dentro del botón */
+    .button-producto i {
+        font-size: 18px; /* Tamaño del ícono */
+    }
+    
+
+    /* Footer */
+    footer {
+        background-color: #40aba8; /* Fondo opcional */
+        padding: 20px;
+        text-align: center;
+        font-size: 14px;
+    }
+
+    .footer-content {
+        display: inline-flex; /* Alinea los elementos en una fila horizontal */
+        align-items: center;  /* Centra verticalmente íconos y texto */
+        gap: 10px;            /* Espacio entre el texto y los íconos */
+    }
+
+    .footer-content p {
+        margin: 0; /* Evita espacios adicionales */
+    }
+
+    .footer-content a {
+        text-decoration: none;
+        color: black; /* Color de los íconos */
+        font-size: 18px;
+        transition: color 0.3s ease;
+    }
+
+    .footer-content a.facebook:hover {
+        color: #4267B2; /* Color de Facebook */
+    }
+
+    .footer-content a.instagram:hover {
+        color: #C13584; /* Color de Instagram */
+    }

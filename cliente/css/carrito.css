@@ -1,0 +1,178 @@
+
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f9;
+    margin: 0;
+    padding: 0;
+}
+
+.top-banner {
+    background-color: #28a499;
+    text-align: center;
+    padding: 8px;
+    font-size: 1rem;
+    color: white;
+}
+
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    margin: 30px auto;
+    max-width: 1200px;
+    background-color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para las columnas */
+.left, .right {
+    width: 48%;
+}
+
+.left h3, .right h3 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    font-weight: bold;
+    display: block;
+    color: #333;
+}
+
+.form-group input, .form-group select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.right table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.right table th, .right table td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.right table th {
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+.right table td img {
+    max-width: 60px;
+    height: auto;
+}
+
+.summary {
+    background-color: #f9f9f9;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 8px;
+}
+
+.summary p, .summary h3 {
+    margin: 5px 0;
+    color: #333;
+}
+
+.btn {
+    background-color: #40aba8;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    margin-top: 10px;
+}
+
+.btn:hover {
+    background-color: #0cc0df;
+}
+
+/* Modal y fondo oscuro */
+#modalVolver, #modalOverlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+#modalVolver {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    width: 300px;
+    z-index: 1001;
+}
+
+#modalVolver h3 {
+    margin: 0 0 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .left, .right {
+        width: 100%;
+    }
+    .right table, .summary {
+        margin-top: 20px;
+    }
+}
+
+/* Footer */
+footer {
+    background-color: #40aba8; /* Fondo opcional */
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.footer-content {
+    display: inline-flex; /* Alinea los elementos en una fila horizontal */
+    align-items: center;  /* Centra verticalmente íconos y texto */
+    gap: 10px;            /* Espacio entre el texto y los íconos */
+}
+
+.footer-content p {
+    margin: 0; /* Evita espacios adicionales */
+}
+
+.footer-content a {
+    text-decoration: none;
+    color: black; /* Color de los íconos */
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.footer-content a.facebook:hover {
+    color: #4267B2; /* Color de Facebook */
+}
+
+.footer-content a.instagram:hover {
+    color: #C13584; /* Color de Instagram */
+}
